@@ -381,3 +381,47 @@ db.sales.aggregate([
   _id: 'Cappuccino',
   maxQty: 72
 }
+import com.mongodb.client.*;
+import org.bson.Document;
+
+public class MongoMaxExample {
+
+    public static void main(String[] args) {
+
+        // Connect to MongoDB
+        MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
+
+        // Access database
+        MongoDatabase database = mongoClient.getDatabase("vit");
+
+        // Access collection
+        MongoCollection<Document> collection = database.getCollection("sales");
+
+        // ==========================
+        // MAX Quantity
+        // ==========================
+
+        AggregateIterable<Document> result = collection.aggregate(
+                java.util.Arrays.asList(
+                        new Document("$group",
+                                new Document("_id", null)
+                                        .append("maxQty",
+                                                new Document("$max", "$quantity"))),
+                        new Document("$project",
+                                new Document("_id", 0)
+                                        .append("maxQty", 1))
+                ));
+
+        System.out.println("Maximum Quantity:");
+
+        for (Document doc : result) {
+            System.out.println(doc.toJson());
+        }
+
+        mongoClient.close();
+    }
+}
+
+OUTPUT-
+Maximum Quantity:
+{"maxQty": 30}
