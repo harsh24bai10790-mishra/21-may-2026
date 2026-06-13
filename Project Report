@@ -1,0 +1,67 @@
+Insurance Policy Management System
+1. Project Details
+Project Title
+Insurance Policy Management System – REST API using Spring Boot and MongoDB
+Project Description
+The Insurance Policy Management System is a backend-only application developed to manage insurance operations digitally. The system provides RESTful APIs for managing Customers, Policies, Agents, Claims, and Premium Payments. It supports complete CRUD operations and implements real-world insurance workflows such as policy purchase, agent assignment, premium payment processing, claim filing and approval, and policy renewal.
+The project demonstrates MongoDB relationship modeling using embedded documents and references to represent One-to-One, One-to-Many, Many-to-One, and Many-to-Many relationships. All APIs are documented using Swagger/OpenAPI and tested through Postman.
+________________________________________
+2. Technical Details
+Architecture
+•	RESTful API Architecture
+•	Layered Architecture (Controller → Service → Repository → Database)
+Database Design
+•	NoSQL Document-Based Database
+•	Embedded Documents
+•	Document References (@DBRef)
+Relationships Implemented
+•	One-to-One: Customer ↔ Customer Profile
+•	One-to-Many: Customer → Policies
+•	Many-to-One: Policies → Agent
+•	Many-to-Many: Agents ↔ Policies
+Core Functionalities
+•	Customer Management
+•	Policy Management
+•	Agent Management
+•	Claim Processing
+•	Premium Payment Management
+•	Policy Renewal
+•	Search and Filtering
+•	Exception Handling
+•	Input Validation
+________________________________________
+3. Technologies Used
+Technology	Purpose
+Java 17	Programming Language
+Spring Boot 3.x	Backend Framework
+Spring Data MongoDB	Data Access Layer
+MongoDB	NoSQL Database
+Maven	Build & Dependency Management
+Jackson	JSON Serialization/Deserialization
+Swagger/OpenAPI	API Documentation
+REST APIs	Client-Server Communication
+SLF4J & Logback	Logging Framework
+________________________________________
+
+4. Tools Used
+Tool	Purpose
+IntelliJ IDEA 	Development Environment
+MongoDB Compass	Database Management
+Postman	API Testing
+Swagger UI	API Documentation & Testing
+Git	Version Control
+GitHub	Source Code Repository
+Maven	Project Build Automation
+________________________________________
+5. Database Collections
+•	Customers
+•	Policies
+•	Agents
+•	Claims
+•	Payments
+________________________________________
+6. Expected Outcome
+The project will deliver a fully functional backend system capable of managing insurance operations through REST APIs. 
+It will demonstrate Spring Boot and MongoDB integration, NoSQL relationship modeling, API development, validation, 
+exception handling, and business workflow implementationwhile providing complete API documentation and testing support through Swagger and Postman.
+
